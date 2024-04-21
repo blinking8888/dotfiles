@@ -112,7 +112,7 @@ source $ZSH/oh-my-zsh.sh
 
 PATH=$NVIM_PATH:$FZF_BIN:$PATH
 
-source $CARGO_HOME/env
+source $DOTFILES/cargo/env
 source $DOTFILES/bat/bat.zsh
 source $DOTFILES/eza/eza.zsh
 [ -f $DOTFILES/fzf/.fzf.zsh ] && source $DOTFILES/fzf/.fzf.zsh
