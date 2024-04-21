@@ -13,7 +13,6 @@ if [[ -d $CARGO_HOME ]]; then
     esac
 
     if [[ -f $(which sccache) ]]; then
-        echo "sccache found, configuring it as RUSTC_WRAPPER"
         export RUSTC_WRAPPER=$CARGO_HOME/bin/sccache
     fi
 
