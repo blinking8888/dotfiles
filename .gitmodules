@@ -1,0 +1,6 @@
+[submodule "alacritty/catpuccin"]
+	path = alacritty/catpuccin
+	url = https://github.com/catppuccin/alacritty.git
+[submodule "nvm"]
+	path = nvm
+	url = https://github.com/nvm-sh/nvm.git

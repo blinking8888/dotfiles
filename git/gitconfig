@@ -1,0 +1,28 @@
+[alias]
+	changes = "!git lol `git tracked-remote`..HEAD"
+	co = checkout
+	cp  = cherry-pick
+	logd = log --decorate
+	logdn = log --decorate --name-only
+	lol = log --pretty="'%C(magenta)%h%Creset%C(cyan)%d%Creset %C(white)%s%Creset%C(yellow) (%ar)%Creset'"
+	ln = log -10 --pretty="'%C(magenta)%h%Creset%C(cyan)%d%Creset %C(white)%s%Creset%C(yellow) (%ar)%Creset'"
+	missing = "!git lol HEAD..`git tracked-remote`"
+	new = changes
+	rg = "!sh -c 'rg -n $1' -" 
+	stash-keep = stash --keep-index
+	sw = switch
+	track = "!f() { git branch --set-upstream-to=$1; }; f"
+	tracked-remote = rev-parse --abbrev-ref --symbolic-full-name @{u}
+[core]
+	editor = nvim
+	pager = delta
+	commentChar = ";"
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+	autoSquash = true
+[rerere]
+	enabled = true
