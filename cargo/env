@@ -1,14 +1,25 @@
 #!/bin/sh
-# rustup shell setup
-# affix colons on either side of $PATH to simplify matching
-case ":${PATH}:" in
-    *:"$CARGO_HOME/bin":*)
-        ;;
-    *)
-        # Prepending path in case a system-installed rustc needs to be overridden
-        export PATH="$CARGO_HOME/bin:$PATH"
-        ;;
-esac
 
-RUSTC_WRAPPER=$CARGO_HOME/bin/sccache
-CARGO_NET_GIT_FETCH_WITH_CLI=true
+if [[ -d $CARGO_HOME ]]; then
+    # rustup shell setup
+    # affix colons on either side of $PATH to simplify matching
+    case ":${PATH}:" in
+        *:"$CARGO_HOME/bin":*)
+            ;;
+        *)
+            # Prepending path in case a system-installed rustc needs to be overridden
+            export PATH="$CARGO_HOME/bin:$PATH"
+            ;;
+    esac
+
+    if [[ -f $(which sccache) ]]; then
+        echo "sccache found, configuring it as RUSTC_WRAPPER"
+        export RUSTC_WRAPPER=$CARGO_HOME/bin/sccache
+    fi
+
+    export CARGO_NET_GIT_FETCH_WITH_CLI=true
+else 
+    echo "CARGO_HOME is not setup or does not exist"
+    exit
+fi
+
