@@ -1,5 +1,5 @@
 [submodule "alacritty/catpuccin"]
-	path = alacritty/catpuccin
+	path = alacritty/catppuccin
 	url = https://github.com/catppuccin/alacritty.git
 [submodule "nvm"]
 	path = nvm
