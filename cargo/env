@@ -19,6 +19,5 @@ if [[ -d $CARGO_HOME ]]; then
     export CARGO_NET_GIT_FETCH_WITH_CLI=true
 else 
     echo "CARGO_HOME is not setup or does not exist"
-    exit
 fi
 
