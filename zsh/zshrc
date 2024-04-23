@@ -65,12 +65,20 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Setup the search PATH
+# NVIM_PATH=/opt/nvim-linux64/bin
+# CARGO_HOME=~/.cargo
+# FZF_BIN=~/.fzf/bin
+PATH=$NVIM_PATH:$FZF_BIN:$PATH
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git eza zoxide)
+
+source $DOTFILES/cargo/env
+plugins=(git zoxide)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,13 +114,7 @@ source $ZSH/oh-my-zsh.sh
 # installed so just custom define them and they'd be configured here.
 #
 # DOTFILES=$HOME/dotfiles/
-# NVIM_PATH=/opt/nvim-linux64/bin
-# CARGO_HOME=~/.cargo
-# FZF_BIN=~/.fzf/bin
 
-PATH=$NVIM_PATH:$FZF_BIN:$PATH
-
-source $DOTFILES/cargo/env
 source $DOTFILES/bat/bat.zsh
 source $DOTFILES/eza/eza.zsh
 
