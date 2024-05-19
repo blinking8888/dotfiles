@@ -27,3 +27,11 @@ style = "Regular"
 [shell]
 args = ["--"]
 program = "/bin/zsh"
+
+[window]
+padding.x = 5
+padding.y = 5
+
+decorations = "Buttonless"
+opacity = 0.99
+blur = true
