@@ -22,7 +22,7 @@ opt.mouse = ''
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-opt.clipboard = 'unnamedplus'
+-- opt.clipboard = 'unnamedplus'
 
 -- Enable break indent
 opt.breakindent = true
@@ -70,3 +70,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 	group = highlight_group,
 	pattern = '*',
 })
+
+-- Spell check for these types of files
+vim.api.nvim_create_autocmd(
+	"FileType",
+	{ pattern = { "txt", "markdown", "gitcommit" }, command = [[setlocal spell]] }
+)

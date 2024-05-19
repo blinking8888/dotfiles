@@ -87,3 +87,7 @@ nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Fo
 nmap('<leader>wl', function()
 	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 end, '[W]orkspace [L]ist Folders')
+
+-- Yank Shortcuts
+keymap.set({ 'n', 'v' }, '<Leader>yc', '"+y', { silent = true, desc = '[y]yank to [c]lipboard' })
+keymap.set({ 'n', 'v' }, '<Leader>yp', '"+p', { silent = true, desc = 'paste from system clipboard' })
