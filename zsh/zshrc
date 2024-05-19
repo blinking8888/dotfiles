@@ -174,3 +174,9 @@ _fzf_comprun() {
   esac
 }
 
+## Setup atuin
+
+if [[ -f $(which atuin) ]] ; then
+    eval "$(atuin init zsh --disable-up-arrow)"
+fi
+
