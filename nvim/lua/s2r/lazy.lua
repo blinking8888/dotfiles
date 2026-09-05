@@ -30,8 +30,8 @@ require('lazy').setup({
     require('s2r.plugins.clang-format'),
     require('s2r.plugins.dressing'),
     -- require 's2r.plugins.debug',
-    require 's2r.plugins.copilot-cmp',
-    require 's2r.plugins.copilot',
+    -- require 's2r.plugins.copilot-cmp',
+    -- require 's2r.plugins.copilot',
     require('s2r.plugins.lsp'),
     -- require('s2r.plugins.theme'),
 }, {})
