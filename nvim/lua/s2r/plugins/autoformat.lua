@@ -41,6 +41,7 @@ function M.setup()
   }
 
   local autoformat_clients = {
+    tsc = true,
     ts_ls = true,
     tsserver = true,
     rust_analyzer = true,

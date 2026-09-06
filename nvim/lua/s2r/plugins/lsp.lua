@@ -23,7 +23,7 @@ return {
           "rustup", "run", "stable", "rust-analyzer",
         },
       },
-      ts_ls = {},
+      tsc = {},
       lua_ls = {
         settings = {
           Lua = {
@@ -44,10 +44,14 @@ return {
     vim.lsp.config('*', { capabilities = capabilities })
 
     -- Ensure the servers above are installed
+    -- Exclude servers not managed by mason (native binaries: tsc, rust_analyzer)
     local mason_lspconfig = require 'mason-lspconfig'
+    local mason_managed = vim.tbl_filter(function(name)
+      return name ~= 'tsc' and name ~= 'rust_analyzer'
+    end, vim.tbl_keys(servers))
 
     mason_lspconfig.setup {
-      ensure_installed = vim.tbl_keys(servers),
+      ensure_installed = mason_managed,
     }
 
     vim.api.nvim_create_autocmd('LspAttach', {

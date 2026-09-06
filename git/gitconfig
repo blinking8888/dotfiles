@@ -15,7 +15,7 @@
 	tracked-remote = rev-parse --abbrev-ref --symbolic-full-name @{u}
 [core]
 	editor = nvim
-	pager = delta
+	# pager = delta
 	commentChar = ";"
 [init]
 	defaultBranch = main
