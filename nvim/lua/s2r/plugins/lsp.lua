@@ -32,7 +32,17 @@ return {
           },
         },
       },
-    }
+      ts_ls = {
+        root_markers = { "package.json" },
+        workspace_required = true,
+        settings = {},
+      },
+      denols = {
+        root_markers = { "deno.json", "deno.jsonc" },
+        settings = {},
+      },
+
+      }
 
     -- Setup neovim lua configuration
     -- require('neodev').setup()
